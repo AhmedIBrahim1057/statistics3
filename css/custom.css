@@ -1,4 +1,11 @@
 /*-------------------------------- General Styles -------------------------------------------*/
+@font-face
+{
+  font-family: 'neo';
+  src: url(fonts/neo-sans-arabic-regular.ttf);
+  font-style: normal;
+  font-weight: bolder;
+}
 
 body{
   padding: 0;
@@ -9,9 +16,11 @@ body{
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   -ms-box-sizing: border-box;
-  font-family: 'Cairo', sans-serif;
   background-color: #fff;
+  font-family: 'neo';
 }
+
+
 
 h1{
   font-size: 4vw;
@@ -20,18 +29,26 @@ h1{
 }
 
 h4{
-  font-size: 1.5vw;
+  margin-top: 10px;
+  font-size: 1.7vw;
   color: #808080;
+  line-height: 0px;
+}
+
+.bolder {
+  font-weight: 700;
+}
+.bold {
+  font-weight: 600;
+}
+
+.small {
+  font-size: 15px !important;
+  font-weight: bold;
 }
 
 p{
   color: #777;
-}
-
-.separator {
-  width: 100%;
-  height: 2px;
-  background-color: #e6e6e69d;
 }
 
 .muted{
@@ -43,6 +60,23 @@ p{
   color: #3e7a56;
 }
 
+.p {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.height {
+  height: 60px;
+}
+
+.h5 {
+  font-size: 1.2vw;
+}
+
+.text-content {
+  height: 17px;
+}
+
 /*------------------------------------------------- logo ---------------------------------------------*/
 
 .logo-container
@@ -52,38 +86,40 @@ p{
 }
 .logo-container::before {
   content: "";
-  width: 34%;
+  width: 30%;
   height: 4px;
   background: #3e7a56;
   position: absolute;
   z-index: -99;
-  left: 10px;
-  top: 90px;
+  left: 5%;
+  top: 50%;
   float: left;
 }
 
 .logo-container::after {
   content: "";
-  width: 34%;
+  width: 30%;
   height: 4px;
   background: #3e7a56;
   position: absolute;
   z-index: -99;
-  right: 10px;
-  top: 90px;
+  right: 5%;
+  top: 50%;
   float: left;
 }
 
 /*------------------------------------------------ Headers --------------------------------------------*/
 
 .subHeader .title{
+  padding-top: 20px;
+  padding-bottom: 20px;
   max-width: 600px;
   margin: 0px auto ;
   background-color: #3e7a56;
   border-radius: 50px;
   display: flex;
-    align-items: center;
-    justify-content: center;
+  align-items: center;
+  justify-content: center;
 }
 
 .subHeader .title::after {
@@ -93,7 +129,7 @@ p{
   background: #ccc;
   position: absolute;
   z-index: -99;
-  right: 10px;
+  right: 5%;
   top: 50%;
   float: left;
 }
@@ -105,7 +141,7 @@ p{
   background: #ccc;
   position: absolute;
   z-index: -99;
-  left: 10px;
+  left: 5%;
   top: 50%;
   float: left;
 }
@@ -140,13 +176,15 @@ p{
 .circle-progress-text-value {
   fill: #3e7a56;
   font-size: 21px;
-  font-family: 'Archivo', sans-serif;
+  font-weight: 600;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .circle-progress-text-max {
   font-size: 10px;
   margin-left: -20px;
-  font-family: 'Archivo', sans-serif;
+  font-weight: 600;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 tspan {
@@ -154,15 +192,15 @@ tspan {
 }
 
 .win {
-  width: 30px;
-  height: 15px;
+  width: 20px;
+  height: 10px;
   background-color: #3e7a56;
   border-radius: 20px;
 }
 
 .lose {
-  width: 30px;
-  height: 15px;
+  width: 20px;
+  height: 10px;
   background-color: #ccc;
   border-radius: 20px;
 }
@@ -170,18 +208,80 @@ tspan {
 /*------------------------------------------------- media query -----------------------------------------*/
 
 @media(min-width: 1750px){
-  .container-fluid {
+  .container{
     max-width: 1550px;
   }
 }
 
 @media (min-width: 1200px) { 
 
+  h4{
+    margin-top: 10px;
+    font-size: 1.5vw;
+    color: #808080;
+    line-height: 0px;
+  }
+
 }
 
 @media (max-width: 992px) { 
 
+  .h5 {
+    font-size: 1.8vw;
+  }
+
+  .small {
+    font-size: 11px !important;
+    font-weight: bold;
+  }
+
+  .p {
+    font-size: 11px;
+    font-weight: bold;
+  }
+
   .subHeader .title{
+    padding-top: 7px;
+    padding-bottom: 10px;
+    width: 45%;
+    margin: 0px auto ;
+    background-color: #3e7a56;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  .container{
+    max-width: 1050px;
+  }
+  .logo-container
+  {
+    width: 250px;
+    margin: 0 auto;
+  }
+}
+
+@media(max-width: 768px){
+
+  .small {
+    font-size: 11px !important;
+    font-weight: bold;
+  }
+
+  .h5 {
+    font-size: 5vw;
+  }
+
+  .p {
+    font-size: 11px;
+    font-weight: bold;
+  }
+
+  .subHeader .title{
+    padding-top: 0px;
+    padding-bottom: 0px;
     width: 65%;
     margin: 0px auto ;
     background-color: #3e7a56;
@@ -193,38 +293,9 @@ tspan {
     margin-bottom: 30px;
   }
 
-  .logo-container
-  {
-    width: 300px;
-    margin: 0 auto;
+  .subHeader .title h4{
+    margin-top: 5px;
   }
-
-  .logo-container::before {
-    content: "";
-    width: 0%;
-    height: 4px;
-    background: #3e7a56;
-    position: absolute;
-    z-index: -99;
-    left: 10px;
-    top: 75px;
-    float: left;
-  }
-  
-  .logo-container::after {
-    content: "";
-    width: 0%;
-    height: 4px;
-    background: #3e7a56;
-    position: absolute;
-    z-index: -99;
-    right: 10px;
-    top: 75px;
-    float: left;
-  }
-}
-
-@media(max-width: 768px){
   .logo-container
   {
     width: 250px;
